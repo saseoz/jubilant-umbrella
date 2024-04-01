@@ -1,0 +1,126 @@
+:root {
+    --font-inter: "Inter", sans-serif;
+    --fw-inter-normal: 400;
+    --fw-inter-bold: 700; 
+    --font-lexend: "Lexend Deca", sans-serif; /* 400 */
+
+    --bg: hsl(233, 47%, 7%);
+    --bg-card: hsl(244, 38%, 16%);
+
+    --accent: hsl(277, 64%, 61%);
+
+    --fontclr-main: hsl(0, 0%, 100%);
+    --font-parag: hsla(0, 0%, 100%, 0.75);
+    --stat:  hsla(0, 0%, 100%, 0.6);
+}
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+}
+img, picture {
+    display: block;
+    max-width: 100%;
+}
+body {
+    background-color: var(--bg);
+    line-height: 1.5;
+    font-family: var(--font-inter);
+    font-size: 15px;
+    color: var(--fontclr-main);
+
+    display: grid;
+    place-content: center;
+    min-height: 100vh;
+    margin: 1.2rem;
+}
+.container {
+    background-color: var(--bg-card);
+    border-radius: .7rem;
+    overflow: hidden;
+    max-width: 500px;
+}
+picture {
+    background-color: var(--accent);
+}
+img {
+    mix-blend-mode: multiply;
+}
+.desktop-img {
+    display: none;
+}
+.content-wrapper {
+    text-align: center;
+    padding: 2rem;
+}
+.content-wrapper > *:not(:last-child) {
+    margin-block-end: 2rem;
+}
+.main-content > *:not(:last-child) {
+    margin-block-end: .7em;
+}
+.main-content h1 {
+    line-height: 1.2;
+    font-size: 1.7rem;
+}
+.main-content .accent {
+    color: var(--accent);
+}
+.main-content p {
+    color: var(--font-parag);
+    font-size: 1rem;
+}
+.status > *:not(:last-child) {
+    margin-block-end: 1.7rem;
+}
+.status h2 {
+    font-size: 1.2rem;
+    line-height: 1;
+}
+.status span {
+    text-transform: uppercase;
+    font-family: var(--font-lexend);
+    font-weight: 400;
+    color: var(--stat);
+    font-size: .6rem;
+    letter-spacing: 1.2px;
+}
+@media (min-width: 900px) {
+    .mobile-img {
+        display: none;
+    }
+    .desktop-img {
+        display: block;
+        object-fit: cover;
+    }
+    .container {
+        max-width: 1000px;
+       
+        display: flex;
+        flex-direction: row-reverse;   
+    }
+    picture {
+        width: 100%;
+        display: flex;
+    }
+    .content-wrapper {
+        width: 100%;
+        text-align: left;
+        padding: 4rem;
+    }
+    .content-wrapper > *:not(:last-child) {
+        margin-block-end: 3.7rem;
+    }
+    .frame {
+        padding-right: 3.4rem;
+    }
+    .status {
+        display: flex;
+    }
+    .status > *:not(:last-child) {
+        margin-block-end: unset;
+        margin-inline-end: 4rem;
+    }
+}
